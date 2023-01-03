@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.three.app.mapper.EntityMapper">
+
+    <select id="getEntities" resultType="com.three.app.entity.Entity">
+        select *,XH+0 as abc from `table_m`  order by XH+0
+    </select>
+    <select id="getEntitiesList" resultType="com.three.app.entity.Entity">
+
+        select *,XH+0 as abc from `table_m`
+        where 1 = 1
+        <if test="cx != null and cx != 'null' and cx != ''">
+            and (`table_m`.`CX` = #{cx})
+        </if>
+        <if test="sfzrkmc != null and sfzrkmc != 'null' and sfzrkmc != ''">
+                <bind name="RKMC" value="'%' + sfzrkmc + '%'"/>
+            and (`table_m`.`SFZRKMC` like #{RKMC})
+        </if>
+        <if test="sfzckmc != null and sfzckmc != 'null' and sfzckmc != ''">
+            <bind name="CKMC" value="'%' + sfzckmc + '%'"/>
+            and (`table_m`.`SFZCKMC` like #{CKMC})
+        </if>
+        order by XH+0
+
+    </select>
+
+</mapper>

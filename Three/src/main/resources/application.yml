@@ -1,0 +1,23 @@
+server:
+  port: 8090
+  tomcat:
+    uri-encoding: UTF-8
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:8066/sz
+    username: root
+    password: 123456
+
+mybatis-plus:
+  type-aliases-package: com.three.app.entity
+  mapper-locations:
+    - classpath*:com/three/app/mapper/xml/*Mapper.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# 分页
+pagehelper:
+  helper-dialect: mysql
+  support-methods-arguments: true

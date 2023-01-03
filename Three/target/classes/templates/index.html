@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+      <table border="1" style="margin: 0 auto"; width="1000px">
+        <thead>
+        <tr>
+          <th>XH</th>
+          <th>CKSJ</th>
+          <th>CX</th>
+          <th>SFZRKMC</th>
+          <th>RKSJ</th>
+          <th>BZ</th>
+          <th>SFZCKMC</th>
+          <th>CP</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user:${users}">
+          <td th:text="${user.XH}"></td>
+          <td th:text="${user.CKSJ}"></td>
+          <td th:text="${user.CX}"></td>
+          <td th:text="${user.SFZRKMC}"></td>
+          <td th:text="${user.RKSJ}"></td>
+          <td th:text="${user.BZ}"></td>
+          <td th:text="${user.SFZCKMC}"></td>
+          <td th:text="${user.CP}"></td>
+        </tr>
+        </tbody>
+      </table>
+</body>
+</html>
